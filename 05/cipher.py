@@ -12,15 +12,26 @@ for letter in "abcdefg":
 def encode_letter(l,r):
     val = ord(l)
     i = 0
-    while (i != r):
+    if(r < 0):
+        while (i != r):
         
-        if val == lower_end:
-            val = lower_start
-        elif val == caps_end:
-            val = caps_start
-        else:
-            val += 1
-        i += 1
+            if val == lower_start:
+                val = lower_end
+            elif val == caps_start:
+                val = caps_end
+            else:
+                val -= 1
+            i -= 1
+    else:
+        while (i != r):
+        
+            if val == lower_end:
+                val = lower_start
+            elif val == caps_end:
+                val = caps_start
+            else:
+                val += 1
+            i += 1
     return chr(val)
 
 def encode_string(s,r):
