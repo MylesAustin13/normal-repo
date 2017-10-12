@@ -6,11 +6,11 @@ def freq(sought_int, list):
     return occurences
     
 def min(list):
-    min = list[0]
+    minimum = list[0]
     for i in list:
-        if (list[i] < min):
-            min = list[i]
-    return min
+        if (list[i] < minimum):
+            minimum = list[i]
+    return minimum
 
 def mode(list):
     result = 0
