@@ -1,8 +1,16 @@
 #include <iostream>
 #include <string>
+#include <locale>
 
+std::string latin(std::string s){
+  std::locale l;
+  std::string start;
+  for(int i = 0;i < s.length();i++){
 
-std::string latin(std::string start){
+    start += std::tolower(s[i]);
+    //  std::cout << start << "\n";
+  }
+  
   std::string format = "";
   if(start[0] == 'a' || start[0] == 'e' ||start[0] == 'i'||start[0] == 'o'||start[0] == 'u'){
     format += start;
@@ -18,7 +26,7 @@ std::string latin(std::string start){
 }
 
 int main(){
-  std::string s = latin("test");
+  std::string s = latin("TEST");
   std::string s2 = latin("apple");
   std::cout << s << std::endl;
   std::cout << s2 <<std::endl;
